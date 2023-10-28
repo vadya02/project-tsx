@@ -31,6 +31,12 @@ const Header: React.FC = () => {
               className="text-white hover:underline">
               Регистрация
             </button>
+            <button
+              className="bg-blue-200 text-black active:bg-blue-500 
+              font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+              type="button"
+              onClick={() => openLoginModal}
+            ></button>
           </nav>
         </div>
       </div>

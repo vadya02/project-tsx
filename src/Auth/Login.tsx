@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../input.css'
 type LoginProps = {
   isOpen?: boolean;
   onClose: () => void;
@@ -8,9 +8,9 @@ type LoginProps = {
 const Login: React.FC<LoginProps> = ({ isOpen, onClose }) => {
   return (
     isOpen ? (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-          <div className="modal-content py-4 text-left px-6">
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 animate-fadeIn" onClick={onClose}>
+        <div className={`modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto ${!isOpen ? 'animate-fadeOut' : ''}`}>
+          <div className="modal-content py-4 text-left px-6 animate-fadeIn">
             <div className="modal-header">
               <h3 className="text-2xl font-semibold">Вход</h3>
             </div>
@@ -24,8 +24,16 @@ const Login: React.FC<LoginProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
         </div>
-      </div>
-    ) : null
+        </div>
+
+          
+      )
+
+
+        
+      
+
+   : null
   );
 };
 
